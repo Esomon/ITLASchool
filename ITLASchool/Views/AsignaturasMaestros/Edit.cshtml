@@ -1,0 +1,36 @@
+﻿@model ITLASchool.Models.AsignaturasMaestros
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AsignaturasMaestros</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AsignaturasMaestrosID" />
+            <div class="form-group">
+                <label asp-for="AsignaturasID" class="control-label"></label>
+                <select asp-for="AsignaturasID" class="form-control" asp-items="ViewBag.AsignaturasID"></select>
+                <span asp-validation-for="AsignaturasID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfesoresID" class="control-label"></label>
+                <select asp-for="ProfesoresID" class="form-control" asp-items="ViewBag.ProfesoresID"></select>
+                <span asp-validation-for="ProfesoresID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

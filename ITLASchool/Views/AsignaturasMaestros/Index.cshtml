@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ITLASchool.Models.AsignaturasMaestros>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Asignaturas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profesores)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Asignaturas.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Profesores.Apellido)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AsignaturasMaestrosID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AsignaturasMaestrosID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AsignaturasMaestrosID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

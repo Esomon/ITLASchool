@@ -1,0 +1,30 @@
+﻿@model ITLASchool.Models.AsignaturasEstudiantes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AsignaturasEstudiantes</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Asignaturas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Asignaturas.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estudiantes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estudiantes.Apellido)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AsignaturasEstudiantesID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
